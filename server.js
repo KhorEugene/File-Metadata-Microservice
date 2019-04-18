@@ -14,7 +14,7 @@ app.get('/', function (req, res) {
      res.sendFile(process.cwd() + '/views/index.html');
   });
 app.post('/api/fileanalyse',upload.single('upfile'),function(req,res,next){
-  const obj = {'filename':req.file.originalname,'size':req.file.size+' bytes','type':req.file.mimetype};
+  const obj = {'name':req.file.originalname,'size':req.file.size,'type':req.file.mimetype};
   res.json(obj);
   console.log('Upload successful.');
 });
